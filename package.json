@@ -10,7 +10,7 @@
     "client": "cd client/ && yarn start --prefix client",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "build": "tsc -p .",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --prefix client && yarn build --prefix client",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
     "install-dev-dependencies": "yarn add -D typescript ts-node ts-node-dev @types/node @types/express @types/bcryptjs @types/cookie-parser @types/express @types/http-errors @types/jsonwebtoken @types/multer @types/mongoose nodemon concurrently tslib",
     "install-dependencies": "yarn add bcryptjs cloudinary cookie-parser cors dotenv express express-validator http-errors jsonwebtoken mongoose multer multer-storage-cloudinary socket.io",
     "lint": "yarn add -D prettier && yarn add -D eslint && npx install-peerdeps --dev eslint-config-airbnb-base && yarn add -D eslint-config-prettier eslint-plugin-prettier"
