@@ -87,7 +87,7 @@ export const login = async (req: Request, res: Response) => {
         },
       });
 
-    const isPasswordMatch = people.matchPassword(password);
+    const isPasswordMatch = await people.matchPassword(password);
 
     if (!isPasswordMatch) {
       return res.status(401).json({
